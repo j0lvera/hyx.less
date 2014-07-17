@@ -1,126 +1,311 @@
-# Hyx.less v1.0
+# Cols.less
 
-Hyx is a [**LESS**](http://lesscss.org) mixing function that creates a modular grid system with flexible gutter.
+*previously hyx.less*
+
+Cols is a very powerful and easy to use grid system for [less](http://lesscss.org).
 
 ## Features
 
-- Easy installation & customization
-- Flexible gutter size, you can change it very easily
-- Built thinking to use only what you need
-- Infinite nesting
-- Fluid layout
-- [RWD](http://alistapart.com/article/responsive-web-design/) friendly!
-- Pre Build Grid example included
+- Flexible gutter size: you can change it whenever you want and your grid won't break.
+- Keeps your DOM clean and semantic; Cols.less will not fill your HTML with a bunch of classes.
+- Powerful and easy to understand syntax, `.cols(1/3);` means one column of three.
+- Use only what you need when you need it. This is a tool to build a grid ad-hoc to your needs. You are not stuck with a rigid API or only one way to build your grid.
+- Nested grids
+- Custom namespaces 
 
-## How to Use
+## Quick start
 
 ### Installation
 
-Download or clone the repo and copy the `hyx.less` file into your less folder, then import it on your main `style.less` file.
-
-
-```css
-@import 'hyx';
-```
-
-### Settings
-
-Set your gutter size in `%`, or leave it as is and default `1%` will be used.
-
-```css 
-@gutter: 2%; 
-```
-
-From here you can uncomment the pre-built grid and start using the classes.
+1. Download the latest stable release from [http://thinkxl.github.io/cols.less/](http://thinkxl.github.io/cols.less/) or clone the git repo - `git clone https://github.com/thinkxl/cols.less.git`
+2. Copy `Cols.less` file from the repo or unzipped folder
+3. Paste it in your less folder
+4. Import it on your main `style.less`
 
 ```css
-/**
- * Pre Build Grid
- * Uncomment only what you need
- */
-// .col-1-2  { .cols(6); }  /* one of two */
-// .col-1-3  { .cols(4); }  /* one of three */
-// .col-1-4  { .cols(3); }  /* one of four */
-// .col-1-6  { .cols(2); }  /* one of six */
-// .col-1-12 { .cols(1); }  /* one of twelve */
+// style.less
+
+@import `Cols`;
 ```
 
-### Example
+### How to use
 
-```css 
-/* Style */
+In the top of `style.less`, specify some settings:
 
-@import 'hyx';
-@gutter: 4%; /* You can change this setting any time you want, the grid will work perfectly without other adjustment */
+```css
+// ## Grid setup
 
-// .col-1-2  { .cols(6); }  /* one of two */
-   .col-1-3  { .cols(4); }  /* one of three <-- I only need this one */
-// .col-1-4  { .cols(3); }  /* one of four */
-// .col-1-6  { .cols(2); }  /* one of six */
-// .col-1-12 { .cols(1); }  /* one of twelve */
+@gutter: 4%; // global gutter, required
 ```
+
+## Let's build our first grid
+
+Cols.less has been designed to build an entire grid only with one function. It can take a parameter in two ways, fractions and integeres.
+
+The main function is `.cols(@size);`, and the two ways that you can input the size of your grid is separated by two syntax styles:
+
+- Same size grid
+- Different size grid
+
+#### Same size
+
+This means that all your columns will have the same size, and they need to be separated in the same distance one from each other. 
+
+The syntax used to build a grid of three columns could be:
+
+```css
+.cols(1/3); // one of three;
+
+// example using it with a class in a semantic named way
+.col-1-3 { .cols(1/3); }
+```
+
+This means one column of three and the function will have the `width` of each element in `%` needed. Cols.less will automatically assign a `margin-right: 0;` to the last element. This way, you can avoid using an extra `.last` class.
+
+#### Different size
+
+With this syntax we are targeting columns of different size, one common scenario is the main content column plus the sidebar one:
+
+```css
+.cols(8); // size of eight columns
+.cols(4, 0); // size of four columns, plus a `margin-right: 0;`
+
+// example using them with a class well named
+
+.main-content { .cols(8); }
+.sidebar { .cols(4, 0); }
+```
+
+Just seeing the code it can tell us what is happening, for same size grids we can use `1/3` for one of three, and for one column with the size of eight we can use just `8` as a parameter, let see those in action.
+
+*This is better explained in the API section.*
+
+#### Building an real example
+
+[You can preview it here](http://codepen.io/thinkxl/full/acvtn/)
+
+`style.less`
+
+```css
+.col-1-3 {
+	// # Same size syntax
+	//
+	// Means one of three elements with the same size.
+	.cols(1/3);
+}
+
+.main { 
+	// # Different size syntax
+	//
+	// Means element with the size of eight columns.
+	.cols(8); 
+}
+
+.sidebar { 
+	// # Different size last element syntax
+	//
+	// Means element with the size of eight columns without gutter. 
+	// The second parameter refers to `margin-right: 0;`.
+	.cols(4, 0); 
+}
+```
+
+compiled to `style.css`
+
+```css
+.col-1-3 {
+  float: left;
+  width: 30.666666666666668%;
+  margin-right: 4%;
+}
+.col-1-3:last-child {
+  margin-right: 0;
+}
+
+.main {
+  float: left;
+  width: 65.33333333333333%;
+  margin-right: 4%;
+}
+
+.sidebar {
+  float: left;
+  width: 30.666666666666668%;
+  margin-right: 0;
+}
+	
+```
+`index.html`
 
 ```html
-<!-- Markup -->
+<section>
+  <div class="row"> <!-- necessary class to wrap the columns -->
+    <div class="main">
+      <p>Main content here!</p>
+      <code>.cols(8);</code>
+    </div> <!-- .main -->
 
-<div class="row"> <!-- necessary class to wrap the columns -->
-    <div class="col-1-3"> <!-- class that include our .cols(4); result -->
-        <p> First column </p>
-    </div>
-    
+    <aside class="sidebar">
+      <p>Sidebar</p>
+      <code>.cols(4);</code>
+    </aside> <!-- .sidebar -->
+  </div> <!-- .row -->
+
+  <hr />
+
+  <div class="row"> 
     <div class="col-1-3">
-        <p> Second column </p>
-    </div>
+      <p> First column </p>
+      <code>.cols(1/3);</code>
+    </div> <!-- .col-1-3 -->
 
     <div class="col-1-3">
-        <p> Third column </p>
-    </div>
-</div> <!-- .row -->
+      <p> Second column </p>
+      <code>.cols(1/3);</code>
+    </div> <!-- .col-1-3 -->
+
+    <div class="col-1-3">
+      <p> Third column </p>
+      <code>.cols(1/3);</code>
+    </div> <!-- .col-1-3 -->
+  </div> <!-- .row -->
+</section>
 ```
 
-## Custom Classes
+[Live example here](http://codepen.io/thinkxl/full/acvtn/)
 
-Otherwise, if you want to create your custom class name or different column sizes, you will need to use the mixing `.cols()` that accepts an integer parameter equivalent to the size of the column.
+[More examples](http://codepen.io/collection/CqJar/)
 
-### Requirements
+## API
 
-- **Class**. You can assign the class name prefix that you want, for example `.col-1-4` or `.one-of-four`, that means one of four, or a prefix like this `.col-4` that means four columns.
+### COLS
 
-- **Parameter**. You can use whatever divisible by 12 or not `;)`, imagine that you want two divs of text that you want to be displayed side by side in a two column layout but different size, something close to 60% - 40%, one for content and another for the sidebar: 
+*(@size, @in-gutter, @global-gutter)*
 
-### Example
+- **@size:** Number of columns that we want.
+- **@in-gutter**: We use this to set the last element to `margin-right: 0;` without loose the precision of the grid size that the `@global-gutter;` gave us.
+- **@global-gutter**: By default this is taken from `@gutter` at the `// settings` we define in the beginning, if we want an element without gutter at all, we set this to `0`.
 
-```css 
-/**
- * Modular
- */
-.col-8 { .cols(8); } /* <div id="content" class="col-8"></div> */
-.col-4 { .cols(4); } /* <div id="sidebar" class="col-4"></div> */
-```
+`.cols();` Is the core and main function, it can create any combination of columns you want in two different syntax's: **same size** & **different size**.
+
+#### Same size syntax
+
+`.cols(1/3);` Meaning one of three, we can use any combination based on a grid of twelve columns, example:
+
+- `.cols(1/3);` *one of three*
+- `.cols(1/4);` *one of four* 
+- `.cols(1/2);` *one of two* 
+
+This function includes `&:last-child { margin-right: 0; }` inside the class, so we don't have to worry to set `margin-right: 0;` in the last element.
+
+**Usage**
 
 ```css
-/** 
- * Semantic
- */
-#content { .cols(8); } /* <div id="content"></div> */
-#sidebar { .cols(4); } /* <div id="sidebar"></div> */
+// namespace, I recommend this but you can use whatever you want
+.col-1-3 {
+
+  // function that will compile the size needed in %
+  .cols(1/3);
+}
 ```
+
+#### Different size syntax
+
+`.cols(4);` This create an element with the size of the columns defined, in this example means that we want an element with the size of four columns.
+
+It takes the gutter from the `@gutter` we define in the `// settings` to make the correct calculation. For avoid breaking the grid we need to add a second parameter in the last element as I explain below.
+
+**Usage**
 
 ```css
-/**
- * Both
- */
-.col-8 { .cols(8); }
-.col-4 { .cols(4); }
-
-#content { &:extend(.col-8); } /* <div id="content"></div> */
-#sidebar { &:extend(.col-4); } /* <div id="sidebar"></div> */
+// namespace, it can be .eight, .grid-8, or whatever you want
+.col-8 {
+  .cols(8);
+}
 ```
 
-## Demo
+#### Different size last element
 
-[Demo Page](http://thinkxl.github.io/hyx)
+`.cols(4, 0);` This function is to use only for the last element using the *different size* syntax, the second parameter applies a `margin-right: 0;` to this element, example:
 
-## Why?
+```css
+	.main {
+		.cols(8);
+	}
+	
+	.sidebar {
+		// last element
+		.cols(4, 0);
+	}
+```
+or
 
-I did this tiny snippet after [Andy Taylor](http://andytaylor.me/) shutted down [cssgrid](http://cssgrid.net), highly inspired on [this post from CSS Tricks](http://css-tricks.com/dont-overthink-it-grids/).
+```css
+	.first-of-three { 
+		.cols(4); 
+	}
+	
+	.second-of-three { 
+		.cols(4); 
+	}
+	
+	.last-of-three { 
+		// last element
+		.cols(4, 0); 
+	}
+```
+
+#### Grid without gutter
+
+You can set the setting `@gutter: 0;`, but then why I need this ugly function with three parameters?
+
+Because sometimes you need the main `@gutter: 4%;` as a general setting, but maybe you want a grid inside the website without gutter that won't affect the other grids, right?
+
+`.cols(4, 0, 0);` Sets all the gutters inside the function to `0` so only this element won't have any gutter, and all other grids if exist won't be affected.
+
+If you want something shorter and nicer, you can use `.span()` more info below.
+
+### SPAN
+
+`.span(@size);` 
+
+- **@size:** Number of columns that we want.
+
+As explained above, this is an alias for `.cols(4, 0, 0);` to make a grid without gutter.
+
+## Extras
+
+### BOX-SIZING
+
+`.box-sizing();`
+
+Sets the box-sizing property to border-box.
+For more information, read [Inheriting box-sizing Probably Slightly Better Best-Practice](http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/)
+
+Compile to:
+
+```css
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+```
+
+### EDIT
+
+`.edit();`
+
+Copied from [Jeet](http://jeet.gs), and as their page describes; Edit mode assigns a light gray, semi-transparent, background to every element on the page. It's a little trick picked up over the years that makes visualizing the structure of your site trivial.
+
+##  TODO
+
+- [x] change name to **Cols.less**
+- [ ] accept `@color` parameter on `.edit();`
+- [ ] port *shift, unshift, center, stack, unstack &amp; align* from [Jeet](http://jeet.gs)
+
+## License
+
+Copyright (c) 2014 [Juan Olvera](http://jolv.me)  
+Licensed under the MIT license.
