@@ -1,13 +1,13 @@
-# Cols.less
+# Hyx.less
 
 *previously hyx.less*
 
-Cols is a very powerful and easy to use grid system for [less](http://lesscss.org).
+Hyx is a very powerful and easy to use grid system for [less](http://lesscss.org).
 
 ## Features
 
 - Flexible gutter size: you can change it whenever you want and your grid won't break.
-- Keeps your DOM clean and semantic; Cols.less will not fill your HTML with a bunch of classes.
+- Keeps your DOM clean and semantic; Hyx.less will not fill your HTML with a bunch of classes.
 - Powerful and easy to understand syntax, `.cols(1/3);` means one column of three.
 - Use only what you need when you need it. This is a tool to build a grid ad-hoc to your needs. You are not stuck with a rigid API or only one way to build your grid.
 - Nested grids
@@ -17,15 +17,15 @@ Cols is a very powerful and easy to use grid system for [less](http://lesscss.or
 
 ### Installation
 
-1. Download the latest stable release from [http://thinkxl.github.io/cols.less/](http://thinkxl.github.io/cols.less/) or clone the git repo - `git clone https://github.com/thinkxl/cols.less.git`
-2. Copy `Cols.less` file from the repo or unzipped folder
+1. Download the latest stable release from [http://thinkxl.github.io/hyx.less/](http://thinkxl.github.io/hyx.less/) or clone the git repo - `git clone https://github.com/thinkxl/hyx.less.git`
+2. Copy `Hyx.less` file from the repo or unzipped folder
 3. Paste it in your less folder
 4. Import it on your main `style.less`
 
 ```css
 // style.less
 
-@import `Cols`;
+@import `hyx`;
 ```
 
 ### How to use
@@ -60,7 +60,7 @@ The syntax used to build a grid of three columns could be:
 .col-1-3 { .cols(1/3); }
 ```
 
-This means one column of three and the function will have the `width` of each element in `%` needed. Cols.less will automatically assign a `margin-right: 0;` to the last element. This way, you can avoid using an extra `.last` class.
+This means one column of three and the function will have the `width` of each element in `%` needed. Hyx.less will automatically assign a `margin-right: 0;` to the last element. This way, you can avoid using an extra `.last` class.
 
 #### Different size
 
@@ -301,7 +301,6 @@ Copied from [Jeet](http://jeet.gs), and as their page describes; Edit mode assig
 
 ##  TODO
 
-- [x] change name to **Cols.less**
 - [ ] accept `@color` parameter on `.edit();`
 - [ ] port *shift, unshift, center, stack, unstack &amp; align* from [Jeet](http://jeet.gs)
 
