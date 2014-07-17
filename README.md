@@ -1,8 +1,6 @@
 # Hyx.less
 
-*previously hyx.less*
-
-Hyx is a very powerful and easy to use grid system for [less](http://lesscss.org).
+A [LESS](http://lesscss.org) Mixing that Creates a Fluid Grid System.
 
 ## Features
 
