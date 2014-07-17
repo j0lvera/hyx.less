@@ -1,3 +1,4 @@
 *~
 *.swp
 *.sh
+.DS_Store
