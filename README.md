@@ -1,27 +1,27 @@
 # Hyx.less
 
-Hyx is a [LESS](http://lesscss.org) tool that helps you to build grids, just that.
+*version 2.1.0*
+
+**Hyx** is a [LESS](http://lesscss.org) tool that helps you to build grids, just that.
 
 The last three years of freelancing I got several issues using other grids, not because they were bad, instead because there is not one complete solution for every problem.
 
-I needed a flexible grid that can be adapted to each project, not forced to use a rigid API.
-
 I came up with my own solution, a mixing function that can create a fluid grid with the column sizes I need, only that, other customization to the grid can be done with the project requirements.
 
-Hyx philosophy resides on Doug McIlroy's famous summation of the Unix philosophy
+**Hyx.less** philosophy resides on Doug McIlroy's famous summation of the Unix philosophy
 
 > Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.
 
 ## Hyx main goals
 
-Hyx.less has some goals in mind that solved most of my problems in the past two years when developing small-mid size websites, that required good looking or complex layouts.
+**Hyx.less** has some goals in mind that solved most of my problems in the past three years when developing small-mid size websites, that required good looking or complex layouts.
 
 - Keep your DOM clean and semantic
 - Have a flexible gutter size: you can change it whenever you want and your grid won't break.
 - Be small, simple, fast and useful, take a look on the list of websites using it.
 - Mantain a powerful and easy to understand syntax, `.cols(1/3);` means one column of three, `.cols(8);` means one element with the size of eight columns.
 - Get only what you need, this tool is designed to build a grid ad-hoc to your needs. You are not stuck with a rigit API or only one way to build your grid.
-- You will get an extensible/hackeable result, Hyx.less won't try to do all the work, you get a **Fluid Grid System** that you can use the way you want.
+- You will get an extensible/hackeable result, **hyx.less** won't try to do all the work, you get a **fluid grid system** that you can use the way you want.
 
 ## Quick start
 
@@ -35,7 +35,7 @@ Hyx.less has some goals in mind that solved most of my problems in the past two 
 ```css
 // style.less
 
-@import `hyx`;
+@import 'hyx';
 ```
 
 ### 2. Required Settings
@@ -73,7 +73,7 @@ The syntax used to build a grid of three columns could be:
 }
 ```
 
-This means one column of three and the function will have the `width` of each element in `%` needed. Hyx.less will automatically assign a `margin-right: 0;` to the last element. This way, you can avoid using an extra `.last` class.
+This means one column of three and the function will have the `width` of each element in `%` needed. **Hyx.less****hyx.less** will automatically assign a `margin-right: 0;` to the last element. This way, you can avoid using an extra `.last` class.
 
 #### 2. Different size
 
