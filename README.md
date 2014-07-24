@@ -8,7 +8,7 @@ The last three years of freelancing I got several issues using other grids, not 
 
 I came up with my own solution, a mixing function that can create a fluid grid with the column sizes I need, only that, other customization to the grid can be done with the project requirements.
 
-**Hyx.less** philosophy resides on Doug McIlroy's famous summation of the Unix philosophy
+**Hyx.less** philosophy resides on Doug McIlroy's famous summation of the Unix philosophy:
 
 > Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.
 
@@ -73,7 +73,7 @@ The syntax used to build a grid of three columns could be:
 }
 ```
 
-This means one column of three and the function will have the `width` of each element in `%` needed. **Hyx.less****hyx.less** will automatically assign a `margin-right: 0;` to the last element. This way, you can avoid using an extra `.last` class.
+This means one column of three and the function will have the `width` of each element in `%` needed. **Hyx.less** will automatically assign a `margin-right: 0;` to the last element. This way, you can avoid using an extra `.last` class.
 
 #### 2. Different size
 
