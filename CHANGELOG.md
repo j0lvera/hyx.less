@@ -9,3 +9,7 @@
 
 - Name changed from micro-grid.less to hyx.less
 - Rebuilt from scratch
+
+=== 1.0.0 Dec 26, 2013
+
+- Initial release
