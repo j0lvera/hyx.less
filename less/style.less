@@ -1,0 +1,210 @@
+/bin/bash: php: command not found
+ * Dependencies
+ */
+@import 'base';
+@import 'hyx';
+
+/**
+ * grid setup for the demo
+ * @gutter & @width
+ */
+@gutter: 1%;
+
+.col-1-2 { .cols(6); }
+.col-1-3 { .cols(4); }
+.col-1-4 { .cols(3); }
+.col-1-6 { .cols(2); }
+.col-1-12 { .cols(1); }
+
+/**
+ * Desktop style
+ */
+body { letter-spacing: 1px; }
+
+#main { 
+    max-width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 67em;
+    padding: 0 1em;
+}
+
+pre code { letter-spacing: 0; }
+
+.headline { 
+    text-align: center; 
+    margin-top: 0;
+}
+
+/**
+ * Sections
+ */
+section { padding: 4em 0; }
+
+/**
+ * Grid
+ */
+.grid-example .row,
+.window-gui .row { margin-bottom: 0.618em; }
+
+@gutter: 2%;
+
+.col-8 { .cols(8); }
+.col-4 { .cols(4); }
+.four { .cols(4); }
+.six { .cols(6); }
+
+/**
+ * Grid Example
+ */
+.grid-example [class*='col-'] {   
+    background: #ccc; 
+    border-radius: 2px;
+}
+
+/**
+ * Header
+ */
+@white: #ecf0f1;
+
+/**
+ * Hero Shot
+ */
+.logo-container { 
+    text-align: center; 
+}
+
+.site-title { 
+    margin: 0;
+}
+
+@red: #e74c3c;
+.hero-shot {
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .row;
+    display: table;
+    padding: 8em 0 0 0;
+    background: @red;
+    color: #fff;
+
+    a { color: darken(@red, 30%); }
+    a:hover { text-decoration: underline; }
+}
+
+// cta
+@red-strong: darken(@red, 30%);
+.button-cta {
+    display: table;
+    margin: 0 auto;
+    border: 2px solid @red-strong;
+    padding: 0.618em 2em;
+    border-radius: 6px;
+    background: @red-strong;
+    color: #fff !important;
+
+    &:hover {
+        background: none; 
+        text-decoration: none !important;
+        color: @red-strong !important;
+    }
+}
+
+// window-gui
+.window-gui {
+    background: #fff;
+    padding: 0.618em;
+    border-top: 1em solid #999;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 1em 1em 0 darken(@red, 8%);
+
+    [class*='col-'] {
+        border: 1px solid #eee;
+        padding: @gutter;
+
+        .col-child { 
+            background: #fff; 
+        }
+
+        p { margin: 0; }
+    }
+
+    pre { 
+        color: #777;
+        margin: 0.618em 0;
+        font-size: 0.618em; 
+        text-align: center;
+    }
+}
+
+/**
+ * Example
+ */
+.grid-example {
+    background: #fff;
+
+    pre { color: #fff; }
+
+    .grid { 
+        padding: 1em; 
+        border: 1px solid #eee;
+        border-radius: 6px;
+        box-shadow: 1em 1em 0 darken(#eee, 1%);
+    }
+}
+
+/**
+ * Info
+ */
+.info {
+
+    background: @white;
+    color: #555;
+    position: relative;
+    z-index: 2;
+
+    p code {
+        font-weight: bold;
+        color: #333;
+        letter-spacing: 0;
+    }
+
+    pre code {
+        border-radius: 6px;
+        box-shadow: 0.618em 0.618em 0 darken(@white, 2%); 
+    }
+}
+
+.pre { background: #fff; }
+
+/**
+ * Footer
+ */
+footer { 
+    padding: 1em 0;
+    background: #333;
+    color: #fff;
+    text-align: center;
+}
+
+@media handheld, only screen and (max-width: 768px) {
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    [class*='col-'] {
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 1em;
+        padding-right: 1em;
+        padding-left: 1em;
+        width: auto;
+    }
+}
