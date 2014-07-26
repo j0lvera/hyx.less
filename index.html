@@ -1,134 +1,130 @@
 <!DOCTYPE html>
 <html class="no-js" itemscope itemtype="http://schema.org/Code">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hyx.less - A LESS Mixing that creates a modular grid system</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hyx.less - A LESS Mixing that creates a modular grid system</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+  <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:400,300,200,500,600,700,800' rel='stylesheet' type='text/css'>
 
-        <!-- build:css css/style.min.css -->
-        <link rel="stylesheet" href="css/style.css">
-        <!-- endbuild -->
+  <!-- build:css css/style.min.css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endbuild -->
 
-        <script src="js/libs/modernizr-2.7.1.min.js"></script>
+  <script src="js/libs/modernizr-2.7.1.min.js"></script>
 
-        <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
-        <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+  <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
 
-        <!-- Google Authorship and Publisher Markup -->
-        <link rel='author' href='https://plus.google.com/u/0/+JuanOlvera/posts/'>
+  <!-- Google Authorship and Publisher Markup -->
+  <link rel='author' href='https://plus.google.com/u/0/+JuanOlvera/posts/'>
 
-        <!-- google+ meta tags -->
-        <meta itemprop="name" content="Hyx.less - A LESS Mixing that creates a modular grid system">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="http://www.sportlighting.com/wp-content/uploads/2014/02/indianola-ms-4-plex.jpg">
-        <meta itemprop="codeRepository" content="http://github.com/thinkxl/hyx" />
-        <meta itemprop="programmingLanguage" content="LESS" />
-        <meta itemprop="creator" content="Juan Olvera" />
+  <!-- google+ meta tags -->
+  <meta itemprop="name" content="Hyx.less - A LESS Mixing that creates a modular grid system">
+  <meta itemprop="description" content="">
+  <meta itemprop="image" content="http://www.sportlighting.com/wp-content/uploads/2014/02/indianola-ms-4-plex.jpg">
+  <meta itemprop="codeRepository" content="http://github.com/thinkxl/hyx" />
+  <meta itemprop="programmingLanguage" content="LESS" />
+  <meta itemprop="creator" content="Juan Olvera" />
 
-        <!-- facebook open graph -->
-        <meta property='og:title' content='Sports Field Lighting - Techline'/>
-        <meta property='og:type' content='website'/>
-        <meta property='og:description' content='Bring your best game to light…with sports field lighting solutions from Techline!'/>
-        <meta property='og:image' content='http://www.sportlighting.com/wp-content/uploads/2014/02/indianola-ms-4-plex.jpg'/>
-        <meta property='og:url' content='http://www.sportlighting.com/sports-field-lighting'/>
-        <meta property='og:site_name' content='Techline - Sports Lighting'/>
+  <!-- facebook open graph -->
+  <meta property='og:title' content='Sports Field Lighting - Techline'/>
+  <meta property='og:type' content='website'/>
+  <meta property='og:description' content='Bring your best game to light…with sports field lighting solutions from Techline!'/>
+  <meta property='og:image' content='http://www.sportlighting.com/wp-content/uploads/2014/02/indianola-ms-4-plex.jpg'/>
+  <meta property='og:url' content='http://www.sportlighting.com/sports-field-lighting'/>
+  <meta property='og:site_name' content='Techline - Sports Lighting'/>
 
-        <!-- twitter card -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@Sports_Lighting">
-        <meta name="twitter:title" content="Sports Field Lighting - Techline">
-        <meta name="twitter:description" content="Bring your best game to light…with sports field lighting solutions from Techline!">
-        <meta name="twitter:creator" content="@Sports_Lighting">
-        <meta name="twitter:image:src" content="http://www.sportlighting.com/wp-content/uploads/2014/02/indianola-ms-4-plex.jpg">
-        <meta name="twitter:domain" content="http://sportlighting.com">
+  <!-- twitter card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@Sports_Lighting">
+  <meta name="twitter:title" content="Sports Field Lighting - Techline">
+  <meta name="twitter:description" content="Bring your best game to light…with sports field lighting solutions from Techline!">
+  <meta name="twitter:creator" content="@Sports_Lighting">
+  <meta name="twitter:image:src" content="http://www.sportlighting.com/wp-content/uploads/2014/02/indianola-ms-4-plex.jpg">
+  <meta name="twitter:domain" content="http://sportlighting.com">
 
-        <!-- ShareThis code needed -->
-        <script type="text/javascript">var switchTo5x=true;</script>
-        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-        <script type="text/javascript">stLight.options({publisher: "bf8c0da1-a094-4449-9bc8-28ba4cde60a3", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
+  <!-- ShareThis code needed -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "bf8c0da1-a094-4449-9bc8-28ba4cde60a3", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+</head>
+<body>
+<!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <main id="main" role="main">
-            <section class="hero-shot">
-                <div class="container">
-                    <div class="logo-container col-1-2">
-                        <div class="logo">
-                            <h1 class="site-title">Hyx.less</h1>
-                            <p class="description">A <a href="http://lesscss.org" title="LESS">LESS</a> Mixing that Creates a <br />Fluid Grid System.</p>
+<main id="main" role="main">
+<section class="hero-shot">
+  <div class="container">
+    <div class="logo-container col-1-2">
+      <div class="logo">
+        <h1 class="site-title">Hyx.less</h1>
+        <p class="description">A <a href="http://lesscss.org" title="LESS">LESS</a> Mixing that Creates a <br />Fluid Grid System.</p>
 
-                            <a class="button-cta" title="Download Hyx" href="#">Download Now!</a>
-                            <a href="http://github.com/thinkxl/hyx" title="GitHub Project"><small>GitHub Project</small></a>
-                        </div>
-                    </div> <!-- .logo -->
+        <a class="button-cta" title="Download Hyx" href="#">Download Now!</a>
+        <a href="https://github.com/thinkxl/hyx.less" title="GitHub Project"><small>GitHub Project</small></a>
+      </div>
+    </div> <!-- .logo -->
 
-                    <div class="tiny-grid-example col-1-2">
-                        <div class="window-gui">
-                            <div class="row">
-                                <div class="col-1-3">
-                                    <pre>.col-1-3</pre>
-                                </div> <!-- .col-1-3 -->
-                                
-                                <div class="col-1-3">
-                                    <pre>.col-1-3</pre>
-                                </div> <!-- .col-1-3 -->
+    <div class="tiny-grid-example col-1-2">
+      <div class="window-gui">
+        <div class="row">
+          <div class="col-1-3">
+            <pre>.col-1-3</pre>
+          </div> <!-- .col-1-3 -->
 
-                                <div class="col-1-3">
-                                    <pre>.col-1-3</pre>
-                                </div> <!-- .col-1-3 -->
-                            </div> <!-- .row -->
+          <div class="col-1-3">
+            <pre>.col-1-3</pre>
+          </div> <!-- .col-1-3 -->
 
-                            <div class="row">
-                                <div class="col-8">
-                                    <pre>.col-8</pre>
-                                </div> <!-- .col-8 -->
+          <div class="col-1-3">
+            <pre>.col-1-3</pre>
+          </div> <!-- .col-1-3 -->
+        </div> <!-- .row -->
 
-                                <div class="col-4">
-                                    <pre>.col-4</pre>
-                                </div> <!-- .col-4 -->
-                            </div> <!-- .row -->
+        <div class="row">
+          <div class="col-8">
+            <pre>.col-8</pre>
+          </div> <!-- .col-8 -->
 
-                            <div class="row">
-                                <div class="col-1-2">
-                                    <pre>.col-1-2</pre>
+          <div class="col-4">
+            <pre>.col-4</pre>
+          </div> <!-- .col-4 -->
+        </div> <!-- .row -->
 
-                                    <div class="col-child col-1-2"><pre>.col-1-2</pre></div> <!-- .col-1-2 -->
-                                    <div class="col-child col-1-2"><pre>.col-1-2</pre></div> <!-- .col-1-2 -->
-                                </div> <!-- .col-1-2 -->
+        <div class="row">
+          <div class="col-1-2">
+            <pre>.col-1-2</pre>
 
-                                <div class="col-1-2">
-                                    <pre>.col-1-2</pre>
+            <div class="col-child col-1-2"><pre>.col-1-2</pre></div> <!-- .col-1-2 -->
+            <div class="col-child col-1-2"><pre>.col-1-2</pre></div> <!-- .col-1-2 -->
+          </div> <!-- .col-1-2 -->
 
-                                    <div class="col-child col-1-1"><pre>.col-1-1</pre></div> <!-- .col-1-1 -->
-                                </div> <!-- .col-1-2 -->
-                            </div> <!-- .row -->
-                        </div> <!-- .window-gui -->                                 
-                    </div> <!-- .tiny-grid-example -->
-                </div> <!-- .container -->
-            </section> <!-- .hero-shot -->
+          <div class="col-1-2">
+            <pre>.col-1-2</pre>
 
-            <section class="info">
-                <div class="container">
-                    <h2 class="headline">How to Use</h2>
-                    <div class="row">
-                        <div class="col-1-2">
-                            <!-- <p><strong>1.</strong> Download or clone the <a href="http://github.com/thinkxl/hyx">repo</a> and copy the <code>hyx.less</code> file into your less folder, then import it on your mail <code>style.less</code> file.</p> -->
+            <div class="col-child col-1-1"><pre>.col-1-1</pre></div> <!-- .col-1-1 -->
+          </div> <!-- .col-1-2 -->
+        </div> <!-- .row -->
+      </div> <!-- .window-gui -->                                 
+    </div> <!-- .tiny-grid-example -->
+  </div> <!-- .container -->
+</section> <!-- .hero-shot -->
 
-                            <!-- <p><strong>2.</strong> Set your gutter size in <code>%</code> or leave it as is and default <code>1%</code> will be used.</p> -->
+<section class="info">
+  <div class="container">
+    <h2 class="headline">How to Use</h2>
+    <div class="row">
+      <div class="col-1-2">
+  
+        <pre><code>&lt;!-- On your HTML --&gt;
 
-                            <!-- <p><strong>3.</strong> Uncomment the pre&#45;built grid and start using the classes.</p> -->
-
-                            <pre><code>&lt;!-- On your HTML --&gt;
 &lt;div class="row"&gt;
     &lt;div class="col-1-3"&gt;
         &lt;p&gt;First column&lt;/p&gt;
@@ -141,56 +137,63 @@
     &lt;div class="col-1-3"&gt;
         &lt;p&gt;Third column&lt;/p&gt;
     &lt;/div&gt;
-&lt;/div&gt; &lt;!-- .row --&gt;                 
-                            </code></pre>
-                        </div> <!-- .col-1-3 -->
+&lt;/div&gt; &lt;!-- .row --&gt;</code></pre>
+      </div> <!-- .col-1-3 -->
 
-                        <div class="col-1-2">
-                            <pre><code class="less">// On your main style.less file
+      <div class="col-1-2">
+        <pre><code class="less">// On your main style.less file
+// ## Grid Setup
 @import 'hyx';
-@gutter: 4%;</pre></code>
+@gutter: 4%;
 
-                            <pre><code class="less">// On the hyx.less file
+  // namespace
+  .col-1-3  { 
+    .cols(1/3); // one of three
+  }</code></pre>
 
-// Pre Built Grid
-//
-// Uncomment only what you need
-//.col-1-2  { .cols(6); }  /* one of two */
-  .col-1-3  { .cols(4); }  /* one of three */
-//.col-1-4  { .cols(3); }  /* one of four */
-//.col-1-6  { .cols(2); }  /* one of six */
-//.col-1-12 { .cols(1); }  /* one of twelve */
-                            </code></pre>
-                        </div> <!-- .col-1-3 -->
-                    </div> <!-- .row -->
-                </div> <!-- .container -->
-            </section> <!-- .info -->
+<p>Compiled to: </p>
 
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <p>Project by <a href="http://jolv.me">Juan Olvera</a></p>
-                    </div> <!-- .row -->
-                </div> <!-- .container -->
-            </footer>
-        </main>
+<pre><code>// compiled style.css 
+.col-1-3 {
+  float: left;
+  width: 30.666666666666668%;
+  margin-right: 4%;
+}
+// when fractions (e.g. `1/4`) used
+// this pseudo selector will be used
+.col-1-3:last-child {
+  margin-right: 0;
+}</code></pre>
+      </div> <!-- .col-1-3 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section> <!-- .info -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.0.min.js"><\/script>')</script>
+<footer>
+  <div class="container">
+    <div class="row">
+      <p>Project by <a href="http://jolv.me">Juan Olvera</a></p>
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</footer>
+</main>
 
-        <!-- build:js js/main.min.js -->
-        <script src="js/libs/hiless.js"></script>
-        <script src="js/main.js"></script>
-        <!-- endbuild -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.11.0.min.js"><\/script>')</script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
+<!-- build:js js/main.min.js -->
+<script src="js/libs/hiless.js"></script>
+<script src="js/main.js"></script>
+<!-- endbuild -->
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                                                        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+ e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+ e.src='//www.google-analytics.com/analytics.js';
+ r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>
+</body>
 </html>

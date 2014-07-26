@@ -1,4 +1,4 @@
-/**
+/*
  * Dependencies
  */
 /* 
@@ -16,8 +16,11 @@ body {
   color: #333333;
   font-weight: 400;
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'dosis', sans-serif;
   line-height: 1.618em;
+}
+#main p {
+  font-size: 1.125em;
 }
 h1,
 h2,
@@ -425,8 +428,9 @@ footer {
     float: none;
     margin-right: 0;
     margin-left: 0;
-    padding-right: 0;
-    padding-left: 0;
+    margin-bottom: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
     width: auto;
   }
 }
