@@ -10,7 +10,7 @@
   <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Dosis:400,300,200,500,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
   <!-- build:css css/style.min.css -->
   <link rel="stylesheet" href="css/style.css">
@@ -65,7 +65,7 @@
     <div class="logo-container col-1-2">
       <div class="logo">
         <h1 class="site-title">Hyx.less</h1>
-        <p class="description">A <a href="http://lesscss.org" title="LESS">LESS</a> Mixing that Creates a <br />Fluid Grid System.</p>
+        <p class="description">A micro grid built with <a href="http://lesscss.org" title="LESS">LESS</a> <br /></p>
 
         <a class="button-cta" title="Download Hyx" href="#">Download Now!</a>
         <a href="https://github.com/thinkxl/hyx.less" title="GitHub Project"><small>GitHub Project</small></a>
@@ -119,13 +119,30 @@
 
 <section class="info">
   <div class="container">
+    <h2 class="headline">About</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+
+    <p><strong>Hyx.less</strong> philosophy resides on Doug McIlroy's famous summation of the Unix philosophy:</p>
+
+    <blockquote>
+      Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.
+    </blockquote>
+  </div> <!-- .container -->
+</section> <!-- .info -->
+
+<section class="usage">
+  <div class="container">
     <h2 class="headline">How to Use</h2>
     <div class="row">
       <div class="col-1-2">
-  
-        <pre><code>&lt;!-- On your HTML --&gt;
+        <h3>Lorem ipsum</h3>
 
-&lt;div class="row"&gt;
+        <p>Donec id elit non mi porta gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor fringilla.</p>
+      </div> <!-- .col-1-2 -->
+
+      <div class="col-1-2">
+        <pre><code>&lt;div class="row"&gt;
     &lt;div class="col-1-3"&gt;
         &lt;p&gt;First column&lt;/p&gt;
     &lt;/div&gt;
@@ -137,42 +154,79 @@
     &lt;div class="col-1-3"&gt;
         &lt;p&gt;Third column&lt;/p&gt;
     &lt;/div&gt;
-&lt;/div&gt; &lt;!-- .row --&gt;</code></pre>
-      </div> <!-- .col-1-3 -->
+&lt;/div&gt;</code></pre>
+      </div> <!-- .col-1-2 -->
+    </div> <!-- .row -->
+
+    <div class="row">
+      <div class="col-1-2">
+        <h3>Lorem ipsum</h3>
+
+        <p>Donec id elit non mi porta gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor fringilla.</p>
+      </div> <!-- .col-1-2 -->
 
       <div class="col-1-2">
-        <pre><code class="less">// On your main style.less file
-// ## Grid Setup
-@import 'hyx';
+        <pre><code class="less">@import 'hyx';
 @gutter: 4%;
 
-  // namespace
   .col-1-3  { 
-    .cols(1/3); // one of three
+    .cols(1/3);
   }</code></pre>
+      </div> <!-- .col-1-2 -->
+    </div><!-- .row -->
 
-<p>Compiled to: </p>
+    <div class="row">
+      <div class="col-1-2">
+        <h3>Lorem ipsum</h3>
 
-<pre><code>// compiled style.css 
-.col-1-3 {
+        <p>Donec id elit non mi porta gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor fringilla.</p>
+      </div> <!-- .col-1-2 -->
+
+      <div class="col-1-2">
+<pre><code class="less">.col-1-3 {
   float: left;
   width: 30.666666666666668%;
   margin-right: 4%;
 }
-// when fractions (e.g. `1/4`) used
-// this pseudo selector will be used
+
 .col-1-3:last-child {
   margin-right: 0;
 }</code></pre>
-      </div> <!-- .col-1-3 -->
+      </div> <!-- .col-1-2 -->
     </div> <!-- .row -->
   </div> <!-- .container -->
 </section> <!-- .info -->
 
+<section id="api">
+  <div class="container">
+    <div class="row">
+      <h2 class="headline">API</h2>
+
+      <h3><code>.cols()</code></h3>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. </p>
+
+      <h3><code>.span()</code></h3>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. </p>
+
+      <h3><code>.edit()</code></h3>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. </p>
+
+      <button class="button-edit">Activate/Deactivate Example Here</button>
+
+      <h3><code>.box-sizing()</code></h3>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. </p>
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section> <!-- #api -->
+
 <footer>
   <div class="container">
     <div class="row">
-      <p>Project by <a href="http://jolv.me">Juan Olvera</a></p>
+      <p><a href="http://twitter.com/thinkxl">@thinkxl</a></p>
     </div> <!-- .row -->
   </div> <!-- .container -->
 </footer>
