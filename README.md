@@ -16,10 +16,10 @@ I came up with my own solution, a mixing function that can create a fluid grid w
 
 **Hyx.less** has some goals in mind that solved most of my problems in the past three years when developing small-mid size websites, that required good looking or complex layouts.
 
-- Keep your DOM clean and semantic
+- Keep your `DOM` clean and semantic
 - Have a flexible gutter size: you can change it whenever you want and your grid won't break.
 - Be small, simple, fast and useful, take a look on the list of websites using it.
-- Mantain a powerful and easy to understand syntax, `.cols(1/3);` means one column of three, `.cols(8);` means one element with the size of eight columns.
+- Mantain a powerful and easy to understand syntax, **`.cols(1/3);`** means one column of three, **`.cols(8);`** means one element with the size of eight columns.
 - Get only what you need, this tool is designed to build a grid ad-hoc to your needs. You are not stuck with a rigit API or only one way to build your grid.
 - You will get an extensible/hackeable result, **hyx.less** won't try to do all the work, you get a **fluid grid system** that you can use the way you want.
 
@@ -204,11 +204,11 @@ compiled to `style.css`
 
 #### 2. Same size syntax
 
-`.cols(1/3);` Meaning one of three, we can use any combination based on a grid of twelve columns, example:
+**`.cols(1/3);`** Meaning one of three, we can use any combination based on a grid of twelve columns, example:
 
-- `.cols(1/3);` *one of three*
-- `.cols(1/4);` *one of four* 
-- `.cols(1/2);` *one of two* 
+- **`.cols(1/3);`** *one of three*
+- **`.cols(1/4);`** *one of four* 
+- **`.cols(1/2);`** *one of two* 
 
 This function includes `&:last-child { margin-right: 0; }` inside the class, so we don't have to worry to set `margin-right: 0;` in the last element.
 
@@ -225,7 +225,7 @@ This function includes `&:last-child { margin-right: 0; }` inside the class, so 
 
 #### 3. Different size syntax
 
-`.cols(8);` This create an element with the size of the columns defined, in this example means that we want an element with the size of eight columns.
+**`.cols(8);`** This create an element with the size of the columns defined, in this example means that we want an element with the size of eight columns.
 
 It takes the gutter from the `@gutter` we define in the settings to make the correct calculation. 
 
@@ -239,7 +239,7 @@ It takes the gutter from the `@gutter` we define in the settings to make the cor
 ```
 For avoid breaking the grid we need to add a second parameter in the last element as I explain below.
 
-`.cols(4, 0);` This function is to use only for the last element using the *different size* syntax. The second parameter applies a `margin-right: 0;` to this element.
+**`.cols(4, 0);`** This function is to use only for the last element using the *different size* syntax. The second parameter applies a `margin-right: 0;` to this element.
 
 **Usage**
 
@@ -274,7 +274,7 @@ For avoid breaking the grid we need to add a second parameter in the last elemen
 
 Sometimes you need the main `@gutter: 4%;` as a general setting, but maybe you want a grid inside the website without gutter that won't affect the other grids, right?
 
-`.cols(4, 0, 0);` Sets all the gutters inside the function to `0` so only this element won't have any gutter, and all other grids won't be affected.
+**`.cols(4, 0, 0);`** Sets all the gutters inside the function to `0` so only this element won't have any gutter, and all other grids won't be affected.
 
 If you want something shorter and nicer, you can use **`span()`** more info below.
 
@@ -282,7 +282,7 @@ If you want something shorter and nicer, you can use **`span()`** more info belo
 
 - **@size:** Number of columns that we want.
 
-As explained above, this is an alias for `.cols(4, 0, 0);` to make a grid without gutter.
+As explained above, this is an alias for **`.cols(4, 0, 0);`** to make a grid without gutter.
 
 ## Extras
 
