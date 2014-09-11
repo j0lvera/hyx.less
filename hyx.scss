@@ -1,0 +1,71 @@
+/*! Hyx v1.0.0 | MIT License | http://github.com/thinkxl/hyx */
+
+// Settings 
+
+$gutter: 4%;    // - distance between columns
+$grid-size: 12; // - num of columns
+$width: 100%;   // - space that we want to use for the grid
+
+.cols ( $num , $in-gutter: $gutter, $global-gutter: $gutter ) {
+	$num-of-cols: 0;
+
+	@if $num < 1 { 
+		$num-of-cols: $num * $grid-size; 
+		&:last-child {
+			margin-right: 0;	
+		}
+	} @else {
+		$num-of-cols: $num;
+	}
+
+	$col-size: ( $width / $grid-size ); 
+	$cols: ( $width / ( $col-size * $num-of-cols ) );
+	float: left;
+	width: ( $width - ( $global-gutter * ( $cols - 1 ) ) ) / $cols;
+	margin-right: $in-gutter; 
+}
+
+// grid container
+
+.row { 
+	width: 100%; 
+
+	&:before,
+	&:after {
+		content: " "; 
+		display: table; 
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+// Extras
+
+// box sizing reset
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+
+@mixin box-sizing() {
+	html {
+		box-sizing: border-box;
+	}
+
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+}
+
+// span
+
+@mixin span($num) { 
+	cols($num, 0, 0); 
+}
+
+// edit
+
+@mixin edit() {
+	* {
+		background: rgba(0,0,0,0.1);
+	}
+}
