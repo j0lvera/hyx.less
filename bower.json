@@ -1,5 +1,5 @@
 {
-	"name": "hyx.scss",
+	"name": "hyx.less",
 	"version": "2.2.0",
-	"main": "hyx.scss"
+	"main": "hyx.less"
 }
